@@ -6,7 +6,15 @@
  * @returns 
  */
 export default function ([counter]) {
-    console.log("new counter data", counter);
-    return counter;
+    return {
+        value: counter.count,
+        increment: {
+            type: "listener",
+            action: "increment",
+            props: {
+                id: counter._id
+            }
+        }
+    };
 }
 
